@@ -22,7 +22,7 @@
 
 #### Déploiement:
 - [ ] Faire une homepage basique flat avec un peu de JS :poop:
-- [ ] Déployez les différents modèles pré-entraînés sur des conteneurs avec Flask tournant sur Cloud Run (liés entre eux via Kubernetes?)
+- [ ] Déployez les différents modèles pré-entraînés sur des conteneurs avec Flask tournant sur Cloud Run (liés entre eux via Kubernetes? https://github.com/minimaxir/gpt-2-cloud-run)
 - [ ] Script tournant H24 sur une instance f1-micro qui permet de shutdown tout cas de facturation excessive
 
 
@@ -31,4 +31,4 @@ Article et repo à utiliser:
 * https://medium.com/datadriveninvestor/deploy-machine-learning-model-in-google-cloud-using-cloud-run-6ced8ba52aac
 * https://github.com/NaxAlpha/gpt-2xy
 * https://github.com/minimaxir/gpt-2-simple
- 
+* https://github.com/minimaxir/gpt-2-cloud-run
