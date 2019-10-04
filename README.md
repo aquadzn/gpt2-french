@@ -31,4 +31,4 @@ Article et repo à utiliser:
 * https://medium.com/datadriveninvestor/deploy-machine-learning-model-in-google-cloud-using-cloud-run-6ced8ba52aac
 * https://github.com/NaxAlpha/gpt-2xy
 * https://github.com/minimaxir/gpt-2-simple
- 
+* https://devopstar.com/2019/04/12/serverless-containers-with-google-cloud-run/ 
