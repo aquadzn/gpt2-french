@@ -1,19 +1,11 @@
 #!/bin/bash
 
-# Install jq et unzip si pas déjà installé
-sudo apt install -y jq unzip
-wget https://www49.zippyshare.com/d/LNwnnXRY/25702/news.zip
-# Lien de secours: https://www31.zippyshare.com/d/PSaKbrdf/21048/news.zip 
-unzip news.zip -d news_json/
-for fname in json/news_000001*.json; do
-    STR=$(cat "$fname" | jq '. | .text')
-    STR=${STR#\"}
-    STR=${STR%\"}
-    STR=${STR//\\n/}
-    STR=${STR//\\t/}
-    STR=${STR//\\/}
-    STR=${STR//\//}
-    echo "$STR" >> tes.txt
-    echo $'\r' >> tes.txt
-    echo "$fname added!"
-done
+wget https://www64.zippyshare.com/d/SA2Zy4VH/1279/articles.txt \
+    --referer='https://www64.zippyshare.com/v/SA2Zy4VH/file.html' \
+    --cookies=off --header "Cookie: JSESSIONID=10AB0BCA43F4DD6A24B98D50BF8A1B47" \
+    --user-agent='Mozilla/5.0 (Windows NT 6.0) Gecko/20100101 Firefox/14.0.1'
+
+# Lien de secours:
+#   - http://dl.free.fr/getfile.pl?file=/zoPhi27J
+#   -
+
