@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Install jq et unzip si pas déjà installé
+sudo apt install -y jq unzip
 wget https://www49.zippyshare.com/d/LNwnnXRY/25702/news.zip
 # Lien de secours: https://www31.zippyshare.com/d/PSaKbrdf/21048/news.zip 
 unzip news.zip -d news_json/
