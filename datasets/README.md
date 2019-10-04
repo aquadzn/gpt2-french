@@ -1,7 +1,6 @@
 # Script de téléchargement
 
-
-### Journaux français:
+### Journaux français:
 
 * [French news articles | Webhose](https://webhose.io/free-datasets/french-news-articles/)
 
