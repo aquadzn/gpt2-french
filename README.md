@@ -32,4 +32,5 @@ Article et repo à utiliser:
 * https://github.com/NaxAlpha/gpt-2xy
 * https://github.com/minimaxir/gpt-2-simple
 * https://devopstar.com/2019/04/12/serverless-containers-with-google-cloud-run/ 
+* https://devopstar.com/2019/03/21/openai-gpt-2-pytorch-model-over-a-containerised-api/
 * https://github.com/minimaxir/gpt-2-cloud-run
