@@ -22,7 +22,7 @@
 
 #### Déploiement:
 - [ ] Faire une homepage basique flat avec un peu de JS :poop:
-- [ ] Déployez les différents modèles pré-entraînés sur des conteneurs avec Flask tournant sur Cloud Run (liés entre eux via Kubernetes?)
+- [ ] Déployez les différents modèles pré-entraînés sur des conteneurs avec Flask tournant sur Cloud Run (liés entre eux via Kubernetes? https://github.com/minimaxir/gpt-2-cloud-run)
 - [ ] Script tournant H24 sur une instance f1-micro qui permet de shutdown tout cas de facturation excessive
 
 
@@ -32,3 +32,4 @@ Article et repo à utiliser:
 * https://github.com/NaxAlpha/gpt-2xy
 * https://github.com/minimaxir/gpt-2-simple
 * https://devopstar.com/2019/04/12/serverless-containers-with-google-cloud-run/ 
+* https://github.com/minimaxir/gpt-2-cloud-run
