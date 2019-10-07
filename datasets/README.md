@@ -4,8 +4,10 @@
 
 * [French news articles | Webhose](https://webhose.io/free-datasets/french-news-articles/)
 
-```bash 
-bash get_news.sh
+```bash
+https://www64.zippyshare.com/v/SA2Zy4VH/file.html
+
+Lien de secours: http://dl.free.fr/getfile.pl?file=/zoPhi27J
 ```
 
 
