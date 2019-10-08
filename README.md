@@ -15,9 +15,9 @@
 #### Fine-tuning:
 - [x] Fine-tunez GPT-2 medium avec [GPT-2 Simple](https://github.com/minimaxir/gpt-2-simple/) sur des livres et poèmes français
 - [x] Générez du texte à partir du modèle fine-tunez (résultats à améliorer :poop:)
+- [x] Fine-tunez GPT-2 avec le repo gpt2-simple (Github)
+- [x] Réalisez 3 types de générations différents (dont 5 artistes plus connus ou tout concat?)
 - [ ] Fine-tunez GPT-2 medium avec la lib transformers d'Huggingface (https://huggingface.co/transformers/examples.html)
-- [ ] Fine-tunez GPT-2 avec le repo gpt2-simple (Github)
-- [ ] Réalisez 3 types de générations différents (dont 5 artistes plus connus ou tout concat?)
 
 
 #### Déploiement:
