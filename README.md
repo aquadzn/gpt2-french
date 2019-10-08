@@ -6,10 +6,10 @@
 
 #### Dataset:
 - [x] Collectez dataset articles journaux
-- [x] Collectez dataset livres (Lovecraft, Hugo, Verne, Orwell?)
+- [x] Collectez dataset livres (Lovecraft, Hugo, Verne, Orwell? https://beq.ebooksgratuits.com/) 
 - [x] Collectez dataset poèmes (https://archive.org/details/booksbylanguage_french?and%5B%5D=victor+hugo&sin=)
 - [ ] Collectez dataset script de film (http://lecteursanonymes.org/scenario/, https://www.cinematheque.fr/cineweb/recherche.html?s=scenario)
-- [ ] Essayez de passer chaque dataset sous .txt et sous .csv pour voir possible différence?
+- [ ] Collectez des sous-titres de séries, les passer en .txt puis concat dans un fichier avec les tokens début/fin
 
 
 #### Fine-tuning:
