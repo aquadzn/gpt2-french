@@ -43,14 +43,14 @@
   }
 
   .buttons {
-    padding-top: 2em;
-    margin-top: 2em;
+    padding-top: 1em;
+    margin-top: 1em;
     border-top: 0.5px solid rgb(228, 228, 228);
   }
+  
 </style>
 
-<html>
-
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,22 +62,15 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
-
 <body>
 
   <section class="hero is-primary is-bold">
     <div class="hero-body">
       <div class="container has-text-centered is-centered">
-        <h1 class="title is-1">
-          GPT-2 Français
-        </h1>
-        <h2 class="subtitle is-4">
-          Génération de textes par une IA
-        </h2>
-        <a class="button is-medium" href="https://github.com/aquadzn/gpt2-french/" target="_blank">
-          <span class="icon">
-            <i class="fab fa-github"></i>
-          </span>
+        <h1 class="title is-1">GPT-2 🇫🇷</h1>
+        <h2 class="subtitle is-4">Génération de textes en français</h2>
+        <a class="button is-medium is-rounded" href="https://github.com/aquadzn/gpt2-french/" target="_blank">
+          <span class="icon"><i class="fab fa-github"></i></span>
           <span>GitHub</span>
         </a>
       </div>
@@ -89,6 +82,7 @@
       <div class="columns is-variable is-5">
         <div class="column is-narrow" style="width: 50%;">
           <form id="gen-form">
+            
             <div class="field">
               <label class="label">Réplique</label>
               <div class="control">
@@ -96,6 +90,7 @@
               </div>
               <p class="help">Réplique avec laquelle débutera le texte généré. <em>(Optionnel, max: 500 caractères)</em></p>
             </div>
+
             <div class="field">
               <label class="label">Longueur du texte généré</label>
               <div class="control">
@@ -111,6 +106,7 @@
               </div>
               <p class="help">Ajuste la créativité du texte généré.<em>(Valeur optimale entre 0.7 et 1)</em></p>
             </div>
+
             <div class="field">
               <label class="label"><em>Top_k</em></label>
               <div class="control">
@@ -119,37 +115,48 @@
               <p class="help">Réduit le nombre de possibilité afin de former le mot suivant à <em>top_k</em> valeur.<em>(Mettre à 0 pour désactiver)</em></p>
             </div>
 
-            <div class="buttons is-group">
+            <div class="buttons">
               <span class="control">
-                <button type="submit" name="submit" id="generate-text" class="button is-link">
+                <button type="submit" name="submit" id="generate-text" class="button is-link is-normal">
                   <span class="icon">
                     <i class="fas fa-md fa-pen"></i>
-                  </span><span>Générez un texte</span></button>
+                  </span>
+                  <span>Générer un texte</span>
+                </button>
               </span>
-              <span class="control">
-                <button id="save-image" class="button is-light">
-                  <span class="icon">
-                    <i class="fas fa-md fa-save"></i>
-                  </span><span>Sauvegardez le texte</span></button>
-              </span>
-              <span class="control">
-                <button id="clear-text" class="button is-danger">
-                  <span class="icon">
-                    <i class="fas fa-md fa-trash-alt"></i>
-                  </span><span>Nettoyez l'affichage</span</button> </span> </div> </div> <div id="model-output" class="column">
             </div>
           
           </form>
 
-          <p id="tutorial" class="subtitle"><em>Votre texte généré apparaîtra ici après avoir appuyé sur le bouton <strong>Générez un texte</strong></em></p>
+          <div class="buttons">
+            <span class="control">
+              <button id="save-image" class="button is-light is-normal">
+                <span class="icon">
+                  <i class="fas fa-md fa-save"></i>
+                </span>
+                <span>Sauvegarder le texte</span>
+              </button>
+            </span>
+
+            <span class="control">
+              <button id="clear-text" class="button is-danger is-normal">
+                <span class="icon">
+                  <i class="fas fa-md fa-trash-alt"></i>
+                </span>
+                <span>Nettoyer l'affichage</span>
+              </button>
+            </span>
           </div>
+          
         </div>
+        
+        <div id="model-output" class="column">
+          <p id="tutorial" class="subtitle"><em>Votre texte généré apparaîtra ici après avoir appuyé sur le bouton <strong>Générez un texte</strong></em></p>
+        </div>
+
       </div>
-
+    </div>
   </section>
-
-
-
 
   <footer class="footer">
     <div class="content has-text-centered">
@@ -162,7 +169,6 @@
       </p>
     </div>
   </footer>
-
 
 </body>
 
@@ -257,8 +263,7 @@
 
     }
   }
-
-
+  
 </script>
 
 </html>
