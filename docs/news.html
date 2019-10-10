@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+  
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPT-2 Français | williamjacques</title>
+  <meta name="title" content="Démo de GPT-2 en français." />
+  <meta name="description" content="Génération de textes en français." />
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/lumen/bulmaswatch.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container has-text-centered is-centered">
+        <h1 class="title is-1">GPT-2 🇫🇷</h1>
+        <h2 class="subtitle is-4">Génération de textes en français</h2>
+        <a class="button is-medium is-rounded" href="https://github.com/aquadzn/gpt2-french/" target="_blank">
+          <span class="icon"><i class="fab fa-github"></i></span>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="main" class="section">
+    <div class="container">
+      <div class="columns is-variable is-5">
+        <div class="column is-narrow" style="width: 50%;">
+          <label class="label">Catégorie de texte</label>
+          <div class="field is-grouped">
+            <p class="control">
+              <a href="index.html" class="button is-info is-outlined">
+                WIKIPEDIA
+              </a>
+            </p>
+            <p class="control">
+              <a href="romans.html" class="button is-success is-outlined">
+                Romans français
+              </a>
+            </p>
+            <p class="control">
+              <a href="news.html" class="button is-link is-active">
+                Articles de journaux
+              </a>
+            </p>
+            <p class="control">
+              <a href="movies.html" class="button is-danger is-outlined">
+                Films
+              </a>
+            </p>
+          </div>
+
+          <form id="gen-form">
+            
+            <div class="field">
+              <label class="label">Réplique</label>
+              <div class="control">
+                <textarea id="prefix" class="textarea" type="text" placeholder="Il était une fois" rows="2"></textarea>
+              </div>
+              <p class="help">Réplique avec laquelle débutera le texte généré. <em>(Optionnel, max: 500 caractères)</em></p>
+            </div>
+
+            <div class="field">
+              <label class="label">Longueur du texte généré</label>
+              <div class="control">
+                <input id="length" class="input" type="text" placeholder="Nombre de mots" value="200">
+              </div>
+              <p class="help">Nombre de mots (tokens) à générer. <em>(max: 1023)</em></p>
+            </div>
+
+            <div class="field">
+              <label class="label">Température</label>
+              <div class="control">
+                <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
+              </div>
+              <p class="help">Ajuste la créativité du texte généré.<em>(Valeur optimale entre 0.7 et 1)</em></p>
+            </div>
+
+            <div class="field">
+              <label class="label"><em>Top_k</em></label>
+              <div class="control">
+                <input id="top_k" class="input" type="text" placeholder="40" value="40">
+              </div>
+              <p class="help">Réduit le nombre de possibilité afin de former le mot suivant à <em>top_k</em> valeur.<em>(Mettre à 0 pour désactiver)</em></p>
+            </div>
+
+            <div class="buttons">
+              <span class="control">
+                <button type="submit" name="submit" id="generate-text" class="button is-link is-normal">
+                  <span class="icon">
+                    <i class="fas fa-md fa-pen"></i>
+                  </span>
+                  <span>Générer un texte</span>
+                </button>
+              </span>
+            </div>
+          
+          </form>
+
+          <div class="buttons">
+            <span class="control">
+              <button id="save-image" class="button is-light is-normal">
+                <span class="icon">
+                  <i class="fas fa-md fa-save"></i>
+                </span>
+                <span>Sauvegarder le texte</span>
+              </button>
+            </span>
+
+            <span class="control">
+              <button id="clear-text" class="button is-danger is-normal">
+                <span class="icon">
+                  <i class="fas fa-md fa-trash-alt"></i>
+                </span>
+                <span>Nettoyer l'affichage</span>
+              </button>
+            </span>
+          </div>
+          
+        </div>
+        
+        <div id="model-output" class="column">
+          <p id="tutorial" class="subtitle"><em>Votre texte généré apparaîtra ici après avoir appuyé sur le bouton <strong>Générez un texte</strong></em></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Site réalisé avec Bulma par <a href="https://github.com/aquadzn/">William Jacques</a>.<br>
+        <br>Implémentations <a href="https://github.com/minimaxir/gpt-2-simple" target="_blank"><strong>gpt-2-simple</strong></a>
+        et <a href="https://github.com/minimaxir/gpt-2-cloud-run" target="_blank"><strong>gpt-2-cloud-run</strong></a> de
+        <a href="https://minimaxir.com" target="_blank">Max Woolf</a>. Modèle GPT-2 original par <a href="https://openai.com" target="_blank">OpenAI</a>.
+        <br>Le contenu de ce site est construit sur la license <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+
+<script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js">
+</script>
+
+<script type="text/javascript">
+  $(function () {
+    $('#gen-form').submit(function (e) {
+      e.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: "http://0.0.0.0:8080",
+        dataType: "json",
+        data: JSON.stringify(getInputValues()),
+        beforeSend: function (data) {
+          $('#generate-text').addClass("is-loading");
+          $('#generate-text').prop("disabled", true);
+        },
+        success: function (data) {
+          $('#generate-text').removeClass("is-loading");
+          $('#generate-text').prop("disabled", false);
+          $('#tutorial').remove();
+          var gentext = data.text;
+          if ($("#prefix").length & $("#prefix").val() != '') {
+            var pattern = new RegExp('^' + $("#prefix").val(), 'g');
+            var gentext = gentext.replace(pattern, '<strong>' + $("#prefix").val() + '</strong>');
+          }
+
+          var gentext = gentext.replace(/\n\n/g, "<div><br></div>").replace(/\n/g, "<div></div>");
+          var html = '<div class=\"gen-box\">' + gentext + '</div><div class="gen-border"></div>';
+          $(html).appendTo('#model-output').hide().fadeIn("slow");
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          $('#generate-text').removeClass("is-loading");
+          $('#generate-text').prop("disabled", false);
+          $('#tutorial').remove();
+          var html = '<div class="gen-box warning">Il y a eu une erreur pendant la génération du texte. Veuillez réessayer!</div><div class="gen-border"></div>';
+          $(html).appendTo('#model-output').hide().fadeIn("slow");
+        }
+      });
+    });
+    $('#clear-text').click(function (e) {
+      $('#model-output').text('')
+    });
+
+    // https://stackoverflow.com/a/51478809
+    $("#save-image").click(function () {
+
+      html2canvas(document.querySelector('#model-output')).then(function (canvas) {
+
+        saveAs(canvas.toDataURL(), 'gen_texts.png');
+      });
+    });
+
+  });
+
+  function getInputValues() {
+    var inputs = {};
+    $("textarea, input").each(function () {
+      inputs[$(this).attr('id')] = $(this).val();
+    });
+    return inputs;
+  }
+
+  // https://stackoverflow.com/a/51478809
+  function saveAs(uri, filename) {
+
+    var link = document.createElement('a');
+
+    if (typeof link.download === 'string') {
+
+      link.href = uri;
+      link.download = filename;
+
+      //Firefox requires the link to be in the body
+      document.body.appendChild(link);
+
+      //simulate click
+      link.click();
+
+      //remove the link when done
+      document.body.removeChild(link);
+
+    } else {
+
+      window.open(uri);
+
+    }
+  }
+  
+</script>
+
+</html>
