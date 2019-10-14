@@ -12,11 +12,8 @@ for d in gpt2-models/*; do
         --image "gcr.io/deep-learning-254808/$tag" \
         --platform=managed \
         --allow-unauthenticated \
-        --region=europe-west1 \
+        --region=us-east1 \
         --concurrency=1 \
         --memory=2Gi
-
-#gcloud beta run services list --platform=managed | grep -i -o -E '[a-z]+\@[a-z]+.com'
-
 done
-echo "Done!"
+echo -e "\nDone!\nURLs of Cloud Run services:\n\n$(gcloud beta run services list --platform=managed | grep -Po 'https.?://\S+')"
