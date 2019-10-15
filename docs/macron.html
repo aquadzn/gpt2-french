@@ -33,7 +33,7 @@
       <div class="columns is-variable is-5">
         <div class="column is-narrow" style="width: 50%;">
           <label class="label">Catégorie de texte</label>
-          <div class="field is-grouped">
+          <div class="field buttons">
             <p class="control">
               <a href="https://aquadzn.github.io/gpt2-french/index" class="button is-info is-outlined">
                 Romans français
@@ -61,7 +61,7 @@
             <div class="field">
               <label class="label">Réplique</label>
               <div class="control">
-                <textarea id="prefix" class="textarea" type="text" placeholder="Il était une fois" rows="2"></textarea>
+                <textarea id="prefix" class="textarea" type="text" placeholder="La France " rows="2"></textarea>
               </div>
               <p class="help">Réplique avec laquelle débutera le texte généré. <em>(Optionnel, max: 500 caractères)</em></p>
             </div>
@@ -85,7 +85,7 @@
             <div class="field">
               <label class="label"><em>Top_k</em></label>
               <div class="control">
-                <input id="top_k" class="input" type="text" placeholder="40" value="40">
+                <input id="top_k" class="input" type="text" placeholder="0" value="0">
               </div>
               <p class="help">Réduit le nombre de possibilité afin de former le mot suivant à <em>top_k</em> valeur.<em>(Mettre à 0 pour désactiver)</em></p>
             </div>

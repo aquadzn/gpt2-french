@@ -31,11 +31,6 @@ section {
   font-weight: 700;
 }
 
-.brand-text {
-  display: flex;
-  align-items: center;
-  font-size: 1.5em
-}
 
 .buttons {
   padding-top: 1em;
