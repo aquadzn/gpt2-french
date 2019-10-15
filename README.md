@@ -37,6 +37,3 @@ Basé sur les repos [GPT2-Simple](https://github.com/minimaxir/gpt-2-simple) et 
 
 ## Licence
 MIT
-
-
->Normalement j'ai déjà 3 modèles fine-tunés (Script de films, romans, débats), idée pour un 4e ? Tweets https://github.com/twintproject/twint ? ou bien essayez de faire passer wikipedia REDAC sur transformers car trop lourd pour gpt2-simple!
