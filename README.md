@@ -5,7 +5,7 @@ Modèle [GPT-2](https://github.com/openai/gpt-2) d'OpenAI entraîné sur quatres
 - Livres en français
 - Scripts de films français
 - Compte-rendus des débats parlementaires
-- Tweet en français ?
+- Tweet d'Emmanuel Macron
 
 permettant de faire de la génération de texte.
 
@@ -36,4 +36,4 @@ Basé sur les repos [GPT2-Simple](https://github.com/minimaxir/gpt-2-simple) et 
 
 
 ## Licence
-MIT
+[MIT](https://github.com/aquadzn/gpt2-french/blob/master/LICENSE)
