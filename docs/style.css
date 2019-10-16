@@ -19,12 +19,13 @@ section {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.25;
+  border-bottom: 0.5px solid rgb(228, 228, 228);
 }
 
-.gen-border {
-  height: 0.25em;
-  background-color: #fff;
-}
+/* .gen-border {
+  height: 0.5px;
+  background-color: rgb(228, 228, 228);
+} */
 
 .gen-box.warning {
   color: #e74c3c;

@@ -32,36 +32,31 @@
     <div class="container">
       <div class="columns is-variable is-5">
         <div class="column is-narrow" style="width: 50%;">
-          <label class="label">Catégorie de texte</label>
-          <div class="field buttons">
-            <p class="control">
-              <a href="https://aquadzn.github.io/gpt2-french/index" class="button is-primary is-active">
-                Romans français
-              </a>
-            </p>
-            <p class="control">
-              <a href="https://aquadzn.github.io/gpt2-french/macron" class="button is-success is-outlined">
-                Tweets E. Macron
-              </a>
-            </p>
-            <p class="control">
-              <a href="https://aquadzn.github.io/gpt2-french/debats" class="button is-link is-outlined">
-                Débats parlementaires
-              </a>
-            </p>
-            <p class="control">
-              <a href="https://aquadzn.github.io/gpt2-french/films" class="button is-danger is-outlined">
-                Films
-              </a>
-            </p>
-          </div>
 
           <form id="gen-form">
-            
+
+            <div class="field">
+              <label class="label">Modèle</label>
+              <div class="control has-icons-left">
+                <div class="select is-fullwidth">
+                  <select id="run_name">
+                    <option value="romans">Livres français</option>
+                    <option value="macron">Tweets d'Emmanuel Macron</option>
+                    <option value="debats">Débats parlementaires</option>
+                    <option value="films">Scripts de films français</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fas fa-hdd"></i>
+                </div>
+              </div>
+              <p class="help">Nom du modèle (run_name).</p>
+            </div>
+
             <div class="field">
               <label class="label">Réplique</label>
               <div class="control">
-                <textarea id="prefix" class="textarea" type="text" placeholder="Il était une fois" rows="2"></textarea>
+                <textarea id="prefix" class="textarea" type="text" rows="2"></textarea>
               </div>
               <p class="help">Réplique avec laquelle débutera le texte généré. <em>(Optionnel, max: 500 caractères)</em></p>
             </div>
@@ -69,9 +64,9 @@
             <div class="field">
               <label class="label">Longueur du texte généré</label>
               <div class="control">
-                <input id="length" class="input" type="text" placeholder="Nombre de mots" value="500">
+                <input id="length" class="input" type="text" placeholder="Nombre de mots" value="200">
               </div>
-              <p class="help">Nombre de mots (tokens) à générer. <em>(max: 1023)</em></p>
+              <p class="help">Nombre de mots (tokens) à générer. Environ 20 secondes pour 200 mots.<em>(max: 1023)</em></p>
             </div>
 
             <div class="field">
@@ -80,14 +75,6 @@
                 <input id="temperature" class="input" type="text" placeholder="0.7" value="0.7">
               </div>
               <p class="help">Ajuste la créativité du texte généré.<em>(Valeur optimale entre 0.7 et 1)</em></p>
-            </div>
-
-            <div class="field">
-              <label class="label"><em>Top_k</em></label>
-              <div class="control">
-                <input id="top_k" class="input" type="text" placeholder="40" value="40">
-              </div>
-              <p class="help">Réduit le nombre de possibilité afin de former le mot suivant à <em>top_k</em> valeur.<em>(Mettre à 0 pour désactiver)</em></p>
             </div>
 
             <div class="buttons">
@@ -155,6 +142,23 @@
 </script>
 
 <script type="text/javascript">
+  var placeholderText = {
+      "Livres français": "Il était une fois ",
+      "Tweets d'Emmanuel Macron": "La France ",
+      "Débats parlementaires": "La séance est ouverte.",
+      "Scripts de films français": "WILLIAM"
+  };
+
+  // pick the book placeholder by default at load
+  $("#prefix").val(placeholderText["Livres français"]);
+
+  // change the repplique placeholder when using the dropmenu
+  $("#run_name").on("change", function () {
+    $("#prefix").val(placeholderText[$("#run_name option:selected").text()]);
+  });
+</script>
+
+<script type="text/javascript">
   $(function () {
     $('#gen-form').submit(function (e) {
       e.preventDefault();
@@ -178,14 +182,14 @@
           }
 
           var gentext = gentext.replace(/\n\n/g, "<div><br></div>").replace(/\n/g, "<div></div>");
-          var html = '<div class=\"gen-box\">' + gentext + '</div><div class="gen-border"></div>';
+          var html = '<div class=\"gen-box\">' + gentext + '</div>';
           $(html).appendTo('#model-output').hide().fadeIn("slow");
         },
         error: function (jqXHR, textStatus, errorThrown) {
           $('#generate-text').removeClass("is-loading");
           $('#generate-text').prop("disabled", false);
           $('#tutorial').remove();
-          var html = '<div class="gen-box warning">Il y a eu une erreur pendant la génération du texte. Veuillez réessayer!</div><div class="gen-border"></div>';
+          var html = '<div class="gen-box warning">Il y a eu une erreur pendant la génération du texte. Veuillez réessayer!</div>';
           $(html).appendTo('#model-output').hide().fadeIn("slow");
         }
       });
@@ -207,7 +211,7 @@
 
   function getInputValues() {
     var inputs = {};
-    $("textarea, input").each(function () {
+    $("select, textarea, input").each(function () {
       inputs[$(this).attr('id')] = $(this).val();
     });
     return inputs;
