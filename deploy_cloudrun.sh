@@ -20,7 +20,7 @@ for d in gpt2-models/*; do
         --memory=2Gi
 
     # Delete images on GCR to save money?
-   [ "$question" != "${question#[Yy]}" ] && gcloud container images delete "gcr.io/deep-learning-254808/$tag"
+   [ "$question" != "${question#[Yy]}" ] && gcloud container images delete --force-delete-tags "gcr.io/deep-learning-254808/$tag"
    
 done
 
