@@ -30,6 +30,10 @@ L'output de chaque entraînement, c'est à dire le dossier ```checkpoint/```, es
 Vous pouvez modifier le script ```deploy_cloudrun.sh``` en changeant les variables afin de déployer tous vos différents modèles (dossier dans gpt2-models) d'un coup en le lanceant avec ```bash deploy_cloudrun.sh```
 
 
+## Modèles
+[Release v1.0](https://github.com/aquadzn/gpt2-french/releases/tag/v1.0)
+
+
 ## Crédits
 Basé sur les repos [GPT2-Simple](https://github.com/minimaxir/gpt-2-simple) et [GPT2-CloudRun](https://github.com/minimaxir/gpt-2-cloud-run) de [minimaxir](https://github.com/minimaxir)
 
