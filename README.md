@@ -31,13 +31,11 @@ Vous pouvez lancer le script ```deploy_cloudrun.sh``` afin de déployer tous vos
 
 
 ## Modèles
-[Release v1.0](https://github.com/aquadzn/gpt2-french/releases/tag/v1.0)
-
+[Releases](https://github.com/aquadzn/gpt2-french/releases/)
 
 
 ## Crédits
 Basé sur les repos [GPT2-Simple](https://github.com/minimaxir/gpt-2-simple) et [GPT2-CloudRun](https://github.com/minimaxir/gpt-2-cloud-run) de [minimaxir](https://github.com/minimaxir)
-
 
 
 ## Licence
