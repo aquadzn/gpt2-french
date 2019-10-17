@@ -66,7 +66,7 @@
               <div class="control">
                 <input id="length" class="input" type="text" placeholder="Nombre de mots" value="200">
               </div>
-              <p class="help">Nombre de mots (tokens) à générer. Environ 20 secondes pour 200 mots.<em>(max: 1023)</em></p>
+              <p class="help">Nombre de mots (tokens) à générer. Environ 20 secondes pour 100 mots.<em>(max: 1023)</em></p>
             </div>
 
             <div class="field">
@@ -164,7 +164,7 @@
       e.preventDefault();
       $.ajax({
         type: "POST",
-        url: "http://0.0.0.0:8080",
+        url: "https://gpt2-fr-okpofktkpa-ue.a.run.app",
         dataType: "json",
         data: JSON.stringify(getInputValues()),
         beforeSend: function (data) {
