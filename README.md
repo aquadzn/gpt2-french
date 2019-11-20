@@ -10,7 +10,7 @@ Modèle [GPT-2](https://github.com/openai/gpt-2) d'OpenAI entraîné sur quatres
 permettant de faire de la génération de texte.
 
 
-**Une démo utilisant pour chaque jeu de données un modèle GPT-2 Small (124M) est disponible à l'adresse suivante: https://gpt2.williamjacques.fr**
+**Une démo utilisant pour chaque jeu de données un modèle GPT-2 Small (124M) est disponible à l'adresse suivante: https://gpt2.williamjacques.fr** (service down)
 
 
 ## Usage
