@@ -1,3 +1,11 @@
+# Edit Mai 2020
+
+Ce repo est un peu en désordre et mal expliqué sur certains points.
+
+Ayant accès au Tensorflow Research Cloud Program, je compte peut être entraîner from scratch (et non fine-tuner comme il est question ici) sur un gros dataset en français.
+Si cela abouti, j'archiverai ce qui est ici actuellement et j'écrirai une meilleure doc 👍
+
+
 # [GPT-2](https://gpt2.williamjacques.fr/) :fr:
 
 Modèle [GPT-2](https://github.com/openai/gpt-2) d'OpenAI entraîné sur quatres différents jeux de données en français:
